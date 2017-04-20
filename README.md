@@ -98,6 +98,7 @@ After becoming famous, CodeBots decided to move to a new building and live toget
 
 Help the bots calculate the total price of all the rooms that are suitable for them.
 ```Python
+# Brute force
 def matrixElementsSum(matrix):
         forbidden = {}
         cost = 0
@@ -113,4 +114,18 @@ def matrixElementsSum(matrix):
                                 print "skip",line, column
         print forbidden
         return cost
+
+# Break out of inner loop by lines if I hit zero element
+def matrixElementsSum(matrix):
+        cost = 0
+        for column in xrange(0, len(matrix[0])):
+                for line in xrange(0, len(matrix)):
+                        val = (matrix[line])[column]
+                        if val != 0:
+                                cost += val
+                        else:
+                                  break
+        return cost
+                        
+
 ```
