@@ -202,3 +202,19 @@ def isLucky(n):
         
     return count_left == count_right
 ```
+
+Some people are standing in a row in a park. There are trees between them which cannot be moved. Your task is to rearrange the people by their heights in a non-descending order without moving the trees.
+
+
+```Python
+def sortByHeight(a):
+    people=[]
+    for height in a:
+        if height !=- 1:
+            people.append(height)
+    people.sort(reverse=True)
+    for i in range(len(a)):
+        if a[i] !=-1:
+            a[i]=people.pop()
+    return a
+```
