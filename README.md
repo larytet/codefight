@@ -133,6 +133,7 @@ def matrixElementsSum(matrix):
 
 Given an array of strings, return another array containing all of its longest strings.
 ```Python
+# Two passes
 def allLongestStrings(inputArray):
     max_len = 0
     for s in inputArray:
@@ -142,6 +143,21 @@ def allLongestStrings(inputArray):
     for s in inputArray:
         if len(s) == max_len:
             res.append(s)
+            
+    return res
+    
+# Single pass
+def allLongestStrings(inputArray):
+    max_len = 0
+    res = []
+    for s in inputArray:
+        len_s = len(s)
+        if len_s > max_len:
+            res = [s]
+            max_len = len_s
+        elif (len_s == max_len):
+            res.append(s)
+    
             
     return res
 ```
