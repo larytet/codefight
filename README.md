@@ -161,3 +161,15 @@ def allLongestStrings(inputArray):
             
     return res
 ```
+
+Given two strings, find the number of common characters between them.
+```Python
+def commonCharacterCount(s1, s2):
+    s1 = sorted(s1)
+    s2 = sorted(s2)
+    count = 0
+    for i in range(len(s1)):
+        if s1[i] == s2[i]:
+                   count = count + 1
+    return count 
+```
