@@ -164,5 +164,17 @@ def allLongestStrings(inputArray):
 
 Given two strings, find the number of common characters between them.
 ```Python
+# Almost brute force
+def commonCharacterCount(s1, s2):
+    chars = {}
+    count = 0
+    for c in s1:
+        chars[c] = chars.get(c, 0) + 1
+    for c in s2:
+        count_in_chars = chars.get(c, 0)
+        if count_in_chars > 0:
+            chars[c] = count_in_chars - 1
+            count = count + 1
 
+    return count
 ```
