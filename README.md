@@ -178,3 +178,27 @@ def commonCharacterCount(s1, s2):
 
     return count
 ```
+
+Ticket numbers usually consist of an even number of digits. A ticket number is considered lucky if the sum of the first half of the digits is equal to the sum of the second half.
+
+Given a ticket number n, determine if it's lucky or not.
+
+
+```Python
+# Brute force: count decimal digits, calculate sums 
+def isLucky(n):
+    digits = []
+    temp = n
+    
+    while temp:
+        digits.append(temp % 10)
+        temp = temp/10
+        
+    count_left = 0
+    count_right = 0
+    for i in range (len(digits)/2):
+        count_left = count_left + digits[i]
+        count_right = count_right + digits[len(digits)-i-1]
+        
+    return count_left == count_right
+```
