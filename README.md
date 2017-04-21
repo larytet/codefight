@@ -218,3 +218,30 @@ def sortByHeight(a):
             a[i]=people.pop()
     return a
 ```
+
+You have a string s that consists of English letters, punctuation marks, whitespace characters, and brackets. It is guaranteed that the parentheses in s form a regular bracket sequence.
+
+Your task is to reverse the strings contained in each pair of matching parentheses, starting from the innermost pair. The results string should not contain any parentheses.
+
+```Python
+def reverse_substr(s, i, j):
+    sub_s = s[i:j]
+    return s[0:i] + sub_s[::-1] + s[j:]
+
+def reverseParentheses(s):
+    stack = []
+    for i in range(len(s)):
+        c = s[i]
+        if c == '(':
+            stack.append(i)
+        elif c == ')':
+            j = stack.pop()
+            s = reverse_substr(s, j, i)
+            
+    res = ""
+    for c in s:
+        if not c in "()":
+            res = res + c
+
+    return res
+```
