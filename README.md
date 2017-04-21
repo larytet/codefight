@@ -245,3 +245,21 @@ def reverseParentheses(s):
 
     return res
 ```
+
+Several people are standing in a row and need to be divided into two teams. The first person goes into team 1, the second goes into team 2, the third goes into team 1 again, the fourth into team 2, and so on.
+
+You are given an array of positive integers - the weights of the people. Return an array of two integers, where the first element is the total weight of team 1, and the second element is the total weight of team 2 after the division is complete.
+
+```Python
+def alternatingSums(a):
+    team = 1
+    team1 = 0
+    team2 = 0
+    for weight in a:
+        if team:
+            team1 = team1 + weight
+        else:
+            team2 = team2 + weight
+        team = team ^ 1
+    return [team1, team2]
+```
