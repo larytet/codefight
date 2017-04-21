@@ -270,3 +270,18 @@ def alternatingSums(a):
 def alternatingSums(a):
     return [sum(a[::2]),sum(a[1::2])]
 ```
+
+Given a rectangular matrix of characters, add a border of asterisks(*) to it.
+
+```Python
+def addBorder(picture):
+    picture_adj = []
+    for row in picture:
+        row = "*" + row + "*"
+        picture_adj.append(row)
+    row_len = len(picture_adj[0])
+    row_stars = "*" * row_len
+    picture_adj = [row_stars]+picture_adj+[row_stars]
+    
+    return picture_adj
+```
