@@ -251,6 +251,7 @@ Several people are standing in a row and need to be divided into two teams. The 
 You are given an array of positive integers - the weights of the people. Return an array of two integers, where the first element is the total weight of team 1, and the second element is the total weight of team 2 after the division is complete.
 
 ```Python
+# probably a faster version - one pass, no allocations, slicing
 def alternatingSums(a):
     team = 1
     team1 = 0
@@ -263,7 +264,9 @@ def alternatingSums(a):
         team = team ^ 1
     return [team1, team2]
     
-# a one liner
+# a one liner - probably slower because it generates the lists on the fly
+# see http://stackoverflow.com/questions/7770689/python-string-slicing-stride-clarification
+# for [start:end:step] examples
 def alternatingSums(a):
     return [sum(a[::2]),sum(a[1::2])]
 ```
