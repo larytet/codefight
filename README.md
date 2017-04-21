@@ -262,4 +262,8 @@ def alternatingSums(a):
             team2 = team2 + weight
         team = team ^ 1
     return [team1, team2]
+    
+# a one liner
+def alternatingSums(a):
+    return [sum(a[::2]),sum(a[1::2])]
 ```
