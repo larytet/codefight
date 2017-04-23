@@ -1,6 +1,5 @@
-# codefight
 
-For the sake of desperate Google searchers here are Python solutions
+For the sake of desperate Google searchers here are Python solutions for Level 1-3 of the CodeFigt arcade. 
 
 ```Python
 def add(param1, param2):
